@@ -17,6 +17,41 @@ export default {
   "routifyDir": import.meta.url,
   "children": [
     {
+      "meta": {
+        "dynamic": true
+      },
+      "id": "_default__user_",
+      "_regex": {},
+      "_paramKeys": {},
+      "name": "[user]",
+      "module": false,
+      "file": {
+        "path": "src/routes/[user]",
+        "dir": "src/routes",
+        "base": "[user]",
+        "ext": "",
+        "name": "[user]"
+      },
+      "children": [
+        {
+          "meta": {},
+          "id": "_default__user__index_svelte",
+          "_regex": {},
+          "_paramKeys": {},
+          "name": "index",
+          "file": {
+            "path": "src/routes/[user]/index.svelte",
+            "dir": "src/routes/[user]",
+            "base": "index.svelte",
+            "ext": ".svelte",
+            "name": "index"
+          },
+          "asyncModule": () => import('../src/routes/[user]/index.svelte'),
+          "children": []
+        }
+      ]
+    },
+    {
       "meta": {},
       "id": "_default_index_svelte",
       "_regex": {},
