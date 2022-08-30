@@ -5,14 +5,14 @@ export default {
   "id": "_default",
   "_regex": {},
   "_paramKeys": {},
-  "module": false,
   "file": {
-    "path": "src/routes",
-    "dir": "src",
-    "base": "routes",
-    "ext": "",
-    "name": "routes"
+    "path": "src/routes/_module.svelte",
+    "dir": "src/routes",
+    "base": "_module.svelte",
+    "ext": ".svelte",
+    "name": "_module"
   },
+  "asyncModule": () => import('../src/routes/_module.svelte'),
   "rootName": "default",
   "routifyDir": import.meta.url,
   "children": [
@@ -30,6 +30,22 @@ export default {
         "name": "index"
       },
       "asyncModule": () => import('../src/routes/index.svelte'),
+      "children": []
+    },
+    {
+      "meta": {},
+      "id": "_default_templates_svelte",
+      "_regex": {},
+      "_paramKeys": {},
+      "name": "templates",
+      "file": {
+        "path": "src/routes/templates.svelte",
+        "dir": "src/routes",
+        "base": "templates.svelte",
+        "ext": ".svelte",
+        "name": "templates"
+      },
+      "asyncModule": () => import('../src/routes/templates.svelte'),
       "children": []
     },
     {

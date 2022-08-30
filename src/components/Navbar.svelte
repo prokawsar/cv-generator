@@ -1,6 +1,17 @@
+<script>
+  import { userInfo } from '../utils/store';
+  import { isActive } from '@roxi/routify';
+</script>
+
 <nav class="navbar navbar-expand-lg bg-light">
   <div class="container-fluid">
-    <a class="navbar-brand" href="#">CV Generator</a>
+    <a class="navbar-brand" href="/">CV Generator</a>
+    {#if $userInfo.name && $isActive('/templates')}
+      <span>
+        <span class="badge bg-secondary fs-6">Hey ! Hello, </span>
+        <span class="round fw-bold fs-6 bg-white p-1">{$userInfo.name}</span>
+      </span>
+    {/if}
     <!-- <button
       class="navbar-toggler"
       type="button"
@@ -23,3 +34,10 @@
     </div> -->
   </div>
 </nav>
+
+<style>
+  .round {
+    border: 1px solid rgb(114, 162, 79);
+    border-radius: 3px;
+  }
+</style>
