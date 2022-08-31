@@ -1,4 +1,0 @@
-/
-/[user]/index
-/index
-/templates
