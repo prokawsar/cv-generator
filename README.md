@@ -1,12 +1,12 @@
-# portfolio
+# CV GENERATOR
 
 ## Cloning project
 
 ```bash
 # create a new project in the current directory
-git clone git remote add origin https://github.com/prokawsar/portfolio.git
-# change directory to root of portfolio
-cd portfolio
+git clone git remote add origin https://github.com/prokawsar/cv-generator.git
+# change directory to root of cv-generator
+cd cv-generator
 # install dependency
 npm install
 
