@@ -1,5 +1,8 @@
 {
-    "tabWidth": 2,
-    "singleQuote": true,
-    "svelteIndentScriptAndStyle": true
+	"useTabs": true,
+	"singleQuote": true,
+	"trailingComma": "none",
+	"printWidth": 100,
+	"pluginSearchDirs": ["."],
+	"overrides": [{ "files": "*.svelte", "options": { "parser": "svelte" } }]
 }
