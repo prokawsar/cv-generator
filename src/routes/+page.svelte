@@ -12,7 +12,7 @@
 			<div class="col-span-2 sm:col-span-2">
 				<input
 					bind:value={$userInfo.name}
-					type="text"
+					type="search"
 					name="first-name"
 					placeholder="Your name"
 					class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-indigo-500 focus:ring-indigo-500 sm:text-sm"
