@@ -5,6 +5,6 @@
 
 <Navbar />
 
-<div class="container py-32 p-3">
+<div class="md:container p-32">
 	<slot />
 </div>

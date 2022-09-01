@@ -26,8 +26,10 @@
 			<div class="hidden md:flex items-center space-x-1">
 				{#if $userInfo.name && $page.url.pathname == '/templates'}
 					<span>
-						<span class="">Hey ! Hello, </span>
-						<span class="round">{$userInfo.name}</span>
+						<span class="bg-indigo-600 outline outline-blue-500 rounded text-white p-1"
+							>Hey ! Hello
+						</span>
+						<span class="rounded outline outline-blue-500/50 p-1">{$userInfo.name}</span>
 					</span>
 				{/if}
 			</div>
@@ -49,8 +51,4 @@
 </nav>
 
 <style>
-	.round {
-		border: 1px solid rgb(114, 162, 79);
-		border-radius: 3px;
-	}
 </style>
