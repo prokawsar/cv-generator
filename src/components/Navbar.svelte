@@ -1,26 +1,15 @@
 <script>
 	import { userInfo } from '../utils/store';
+	import { page } from '$app/stores';
 </script>
 
-<!-- <nav class="navbar navbar-expand-lg bg-light">
-	<div class="container-fluid">
-		<a class="navbar-brand" href="/">CV Generator</a>
-		{#if $userInfo.name}
-			<span>
-				<span class="badge bg-secondary fs-6">Hey ! Hello, </span>
-				<span class="round fw-bold fs-6 bg-white p-1">{$userInfo.name}</span>
-			</span>
-		{/if}
-	</div>
-</nav> -->
-
 <nav class="bg-gray-100 fixed inset-x-0">
-	<div class="max-w-6xl mx-auto px-4">
+	<div class="max-w-7xl mx-auto px-4">
 		<div class="flex justify-between">
 			<div class="flex space-x-4">
 				<!-- logo -->
 				<div>
-					<a href="/" class="flex items-center py-5 px-2 text-gray-700 hover:text-gray-900">
+					<a href="/" class="flex items-center py-5 px-2 text-gray-500 hover:text-gray-900">
 						<i class="bx bxl-medium-old mr-1 text-xl mb-1 text-blue-400" />
 						<span class="font-bold">CV Generator</span>
 					</a>
@@ -35,7 +24,7 @@
 			</div>
 			<!-- secondary nav -->
 			<div class="hidden md:flex items-center space-x-1">
-				{#if $userInfo.name}
+				{#if $userInfo.name && $page.url.pathname == '/templates'}
 					<span>
 						<span class="">Hey ! Hello, </span>
 						<span class="round">{$userInfo.name}</span>
