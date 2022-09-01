@@ -10,8 +10,8 @@
 
 <div class="overflow-hidden shadow sm:rounded-md">
 	<div class="bg-gray-50 px-4 py-5 sm:p-6">
-		<div class="grid grid-cols-6 gap-6">
-			<div class="col-span-6 sm:col-span-3">
+		<div class="grid grid-cols-3">
+			<div class="col-span-2 sm:col-span-2">
 				<input
 					bind:value={$userInfo.name}
 					type="text"
@@ -21,11 +21,12 @@
 				/>
 			</div>
 
-			<div class="col-span-6 text-right sm:col-span-3">
+			<div class="col-span-1 text-right sm:col-span-1">
 				<button
 					on:click={gotoTemplate}
+					disabled={!$userInfo.name}
 					type="submit"
-					class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
+					class="inline-flex justify-center rounded-md border border-transparent bg-indigo-600 py-2 px-4 text-sm font-medium text-white shadow-sm hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2 disabled:bg-indigo-600/50 disabled:hover:cursor-not-allowed"
 					>Build CV</button
 				>
 			</div>
