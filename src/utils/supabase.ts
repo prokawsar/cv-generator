@@ -5,7 +5,7 @@ const supabaseUrl = 'https://lxdsjebbaxliighjcbxn.supabase.co';
 const supabaseKey = PUBLIC_SUPABASE_KEY;
 const supabase = createClient(supabaseUrl, supabaseKey);
 
-export class Subabase {
+export class Supabase {
 	_model: any;
 	constructor(model: any) {
 		this._model = model;
