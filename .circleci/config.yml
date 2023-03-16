@@ -15,8 +15,11 @@ jobs:
     steps:
       - checkout
       - run:
-          name: 'Installing tools'
-          command: 'sudo apt update && sudo apt install nodejs npm'
+          name: 'Update system'
+          command: 'sudo apt update'
+      - run:
+          name: 'Install node and npm'
+          command: 'sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - && sudo apt install npm'
       - run:
           name: 'Installing project dependencies'
           command: 'npm install'
