@@ -48,19 +48,15 @@ jobs:
 # Invoke jobs via workflows
 # See: https://circleci.com/docs/2.0/configuration-reference/#workflows
 workflows:
-  testing-app:
+  test-build-deploy-app:
     jobs:
       - test
-  building-app:
-    jobs:
       - build:
           requires:
             - test
           filters:
             branches:
               only: master
-  deploy-app:
-    jobs:
       - deploy:
           requires:
             - build
