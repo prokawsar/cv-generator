@@ -39,6 +39,8 @@ jobs:
           command: 'npm run build'
 
   deploy:
+    docker:
+      - image: cimg/base:stable
     steps:
       -run:
         name: 'Deploying to ... provider'
