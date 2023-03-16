@@ -1,5 +1,7 @@
 # CV GENERATOR
 
+[![CodeQL](https://github.com/prokawsar/cv-generator/actions/workflows/codeql.yml/badge.svg?branch=master)](https://github.com/prokawsar/cv-generator/actions/workflows/codeql.yml)
+
 ## Cloning project
 
 ```bash
