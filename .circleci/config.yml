@@ -54,9 +54,16 @@ workflows:
   building-app:
     jobs:
       - build:
+        requires:
+          - test
         filters:
           branches:
             only: master
   deploy-app:
     jobs:
-      - deploy
+      - deploy:
+        reuires:
+          - build
+        filters:
+          branches:
+            only: master
