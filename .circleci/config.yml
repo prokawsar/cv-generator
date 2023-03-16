@@ -19,7 +19,7 @@ jobs:
           command: 'sudo apt update'
       - run:
           name: 'Install node and npm'
-          command: 'sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - && sudo apt install npm'
+          command: 'sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - && sudo sudo apt install -y nodejs npm'
       - run:
           name: 'Installing project dependencies'
           command: 'npm install'
