@@ -4,14 +4,14 @@
 	import Auth from '$lib/login/Auth.svelte';
 	import Profile from '$lib/login/Profile.svelte';
 
-	user.set(supabase.auth.user());
+	user.set(supabase.auth.user() != null || supabase.auth.user() != undefined);
 
 	supabase.auth.onAuthStateChange((_, session) => {
-		user.set(session.user);
+		user.set(session.user != null || session.user != undefined);
 	});
 </script>
 
-<div class="container" style="padding: 50px 0 100px 0;">
+<div class="flex justify-center">
 	{#if $user}
 		<Profile />
 	{:else}
