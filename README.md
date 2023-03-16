@@ -2,6 +2,8 @@
 
 [![CodeQL](https://github.com/prokawsar/cv-generator/actions/workflows/codeql.yml/badge.svg?branch=master)](https://github.com/prokawsar/cv-generator/actions/workflows/codeql.yml)
 
+[![CircleCI](https://dl.circleci.com/status-badge/img/gh/prokawsar/cv-generator/tree/master.svg?style=shield)](https://dl.circleci.com/status-badge/redirect/gh/prokawsar/cv-generator/tree/master)
+
 ## Cloning project
 
 ```bash
