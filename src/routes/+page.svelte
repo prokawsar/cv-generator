@@ -1,7 +1,18 @@
 <script>
 	import { userInfo } from '../utils/store';
 	import { goto } from '$app/navigation';
+	import { Supabase } from '../utils/supabase';
+	import { onMount } from 'svelte';
+	import { Users } from '../models/users';
+
+	const _User = new Users();
+	const _Supabase = new Supabase(_User.model_name);
+
+	onMount(async () => {
+		console.log(await _Supabase.getAll());
+	});
 	const gotoTemplate = () => {
+		_Supabase.save({ name: 'Kawsar', email: 'hello@email.com' });
 		goto('/templates');
 	};
 </script>

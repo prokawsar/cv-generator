@@ -1,5 +1,5 @@
 <script>
-	import TemplateSelector from '../../components/TemplateSelector.svelte';
+	import TemplateSelector from '$lib/components/TemplateSelector.svelte';
 </script>
 
 <div>

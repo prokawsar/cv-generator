@@ -1,9 +1,9 @@
 <script>
-	import { userInfo } from '../utils/store';
+	import { userInfo } from '../../utils/store';
 	import { page } from '$app/stores';
 </script>
 
-<nav class="bg-gray-100 fixed inset-x-0">
+<div class="bg-gray-100 inset-x-0">
 	<div class="max-w-7xl mx-auto px-4">
 		<div class="flex justify-between">
 			<div class="flex space-x-4">
@@ -24,6 +24,8 @@
 			</div>
 			<!-- secondary nav -->
 			<div class="hidden md:flex items-center space-x-1">
+				<a href="/login" class="py-5 px-3 text-gray-700 hover:text-gray-900">Login</a>
+
 				{#if $userInfo.name && $page.url.pathname == '/templates'}
 					<span>
 						<span class="bg-indigo-600 outline outline-blue-500 rounded text-white p-1"
@@ -48,7 +50,7 @@
 		<a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Pricing</a>
 		<a href="#" class="block py-2 px-4 text-sm hover:bg-gray-200">Features</a> -->
 	</div>
-</nav>
+</div>
 
 <style>
 </style>

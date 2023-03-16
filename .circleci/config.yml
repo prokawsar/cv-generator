@@ -1,0 +1,65 @@
+# Use the latest 2.1 version of CircleCI pipeline process engine.
+# See: https://circleci.com/docs/2.0/configuration-reference
+version: 2.1
+
+# Define a job to be invoked later in a workflow.
+# See: https://circleci.com/docs/2.0/configuration-reference/#jobs
+jobs:
+  test:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - checkout
+      - run:
+          name: 'Testing test'
+          command: echo "Hello testing command"
+  build:
+    # Specify the execution environment. You can specify an image from Dockerhub or use one of our Convenience Images from CircleCI's Developer Hub.
+    # See: https://circleci.com/docs/2.0/configuration-reference/#docker-machine-macos-windows-executor
+    docker:
+      - image: cimg/base:stable
+    # Add steps to the job
+    # See: https://circleci.com/docs/2.0/configuration-reference/#steps
+    steps:
+      - checkout
+      - run:
+          name: Create .env file
+          command: echo "PUBLIC_SUPABASE_KEY=$PUBLIC_SUPABASE_KEY" > .env
+      - run:
+          name: 'Update system'
+          command: 'sudo apt update'
+      - run:
+          name: 'Install node and npm'
+          command: 'sudo curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash - && sudo sudo apt install -y nodejs'
+      - run:
+          name: 'Installing project dependencies'
+          command: 'npm install'
+      - run:
+          name: 'Building SvelteKit App'
+          command: 'npm run build'
+
+  deploy:
+    docker:
+      - image: cimg/base:stable
+    steps:
+      - run:
+          name: 'Deploying to ... provider'
+          command: echo 'Deploy please'
+# Invoke jobs via workflows
+# See: https://circleci.com/docs/2.0/configuration-reference/#workflows
+workflows:
+  test-build-deploy-app:
+    jobs:
+      - test
+      - build:
+          requires:
+            - test
+          filters:
+            branches:
+              only: master
+      - deploy:
+          requires:
+            - build
+          filters:
+            branches:
+              only: master
