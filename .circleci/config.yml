@@ -15,7 +15,10 @@ jobs:
     steps:
       - checkout
       - run:
-          name: 'Installing dependencies'
+          name: 'Installing tools'
+          command: 'sudo apt install node npm'
+      - run:
+          name: 'Installing project dependencies'
           command: 'npm install'
       - run:
           name: 'Building SvelteKit App'
