@@ -1,6 +1,6 @@
 // import adapter from '@sveltejs/adapter-auto';
 import preprocess from 'svelte-preprocess';
-import vercel from '@sveltejs/adapter-vercel';
+import adapter from '@sveltejs/adapter-static';
 
 /** @type {import('@sveltejs/kit').Config} */
 const config = {
@@ -11,11 +11,10 @@ const config = {
 	}),
 
 	kit: {
-		adapter: vercel({
-			// if true, will deploy the app using edge functions
-			// (https://vercel.com/docs/concepts/functions/edge-functions)
-			// rather than serverless functions
-			edge: true
+		adapter: adapter({
+			pages: 'build',
+			assets: 'build',
+			fallback: null
 		})
 	}
 };
