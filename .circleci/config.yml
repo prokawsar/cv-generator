@@ -15,9 +15,8 @@ jobs:
     steps:
       - checkout
       - run:
-        name: Create .env file
-        command: |
-          echo "PUBLIC_SUPABASE_KEY=$PUBLIC_SUPABASE_KEY" > .env
+          name: Create .env file
+          command: echo "PUBLIC_SUPABASE_KEY=$PUBLIC_SUPABASE_KEY" > .env
       - run:
           name: 'Update system'
           command: 'sudo apt update'
