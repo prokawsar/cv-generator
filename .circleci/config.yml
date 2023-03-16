@@ -16,7 +16,7 @@ jobs:
       - checkout
       - run:
           name: 'Installing tools'
-          command: 'sudo apt install nodejs npm'
+          command: 'sudo apt update && sudo apt install nodejs npm'
       - run:
           name: 'Installing project dependencies'
           command: 'npm install'
