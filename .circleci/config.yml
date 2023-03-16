@@ -15,6 +15,9 @@ jobs:
     steps:
       - checkout
       - run:
+          name: 'Installing dependencies'
+          command: 'npm install'
+      - run:
           name: 'Building SvelteKit App'
           command: 'npm run build'
 
