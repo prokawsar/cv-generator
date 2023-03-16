@@ -62,7 +62,7 @@ workflows:
   deploy-app:
     jobs:
       - deploy:
-          reuires:
+          requires:
             - build
           filters:
             branches:
